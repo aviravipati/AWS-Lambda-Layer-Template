@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  python-layer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./output:/layer/output
+    command: ["bash", "-c", "cp /layer/python-layer.zip /layer/output/"]
